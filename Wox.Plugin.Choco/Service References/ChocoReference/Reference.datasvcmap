@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="39a9ff15-32d0-4520-bdb7-c6af06a94ec4" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
+  <MetadataSources>
+    <MetadataSource Address="http://chocolatey.org/api/v2" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="8a96f8a7-4d1b-4b50-bc85-612990cce182" SourceId="1" SourceUrl="http://chocolatey.org/api/v2" />
+  </Metadata>
+  <Extensions />
+  <Parameters>
+    <Parameter Name="UseDataServiceCollection" Value="false" />
+    <Parameter Name="Version" Value="1.0" />
+  </Parameters>
+</ReferenceGroup>
