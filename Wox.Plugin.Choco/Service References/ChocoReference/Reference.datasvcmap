@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="39a9ff15-32d0-4520-bdb7-c6af06a94ec4" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4f217ec4-587b-4a5d-ac00-9131319a5ddd" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
   <MetadataSources>
-    <MetadataSource Address="http://chocolatey.org/api/v2" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://chocolatey.org/api/v2/$metadata" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="8a96f8a7-4d1b-4b50-bc85-612990cce182" SourceId="1" SourceUrl="http://chocolatey.org/api/v2" />
+    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="9022fedf-0d1c-4fb7-8dcf-e146dcf94714" SourceId="1" SourceUrl="https://chocolatey.org/api/v2/$metadata" />
   </Metadata>
   <Extensions />
   <Parameters>

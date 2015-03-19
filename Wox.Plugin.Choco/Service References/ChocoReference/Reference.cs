@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 3/17/2015 9:02:23 PM
+// Generation date: 3/19/2015 12:04:31 AM
 namespace Wox.Plugin.Choco.ChocoReference
 {
     

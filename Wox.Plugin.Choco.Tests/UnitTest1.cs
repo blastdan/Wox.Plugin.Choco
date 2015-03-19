@@ -23,7 +23,7 @@ namespace Wox.Plugin.Choco.Tests
         public void QueryTest()
         {
             var main = new Main();
-            var query = new Query("choco AIDA64");
+            var query = new Query("choco Putty");
 
             main.Query(query);
         }

@@ -27,9 +27,20 @@ namespace Wox.Plugin.Choco
                 IcoPath = string.IsNullOrEmpty(x.IconUrl) ? string.Empty : Parameters.ImageFilePath + FileUtilities.CleanFileName(x.Title) + Parameters.FilePrefix,
                 Title = x.Title,
                 SubTitle = x.Version +  " - " + x.Description.Replace("\n", ""),
+                ContextMenu = new List<Result>(){
+                    new Result()
+                    {
+                        Title = "Uninstall",
+                        IcoPath = string.IsNullOrEmpty(x.IconUrl) ? string.Empty : Parameters.ImageFilePath + FileUtilities.CleanFileName(x.Title) + Parameters.FilePrefix,
+                        Action = (c) => {
+                            Uninstall(x.Id);
+                            return true;
+                        }
+                    }
+                },
                 Action = (c) =>
                 {
-                    Install(x.Title);
+                    Install(x.Id);                    
                     return true;
                 }
             }).ToList();
@@ -46,7 +57,33 @@ namespace Wox.Plugin.Choco
                 Verb = "runas"
             };
 
-            Process.Start(psi);
+            try
+            {
+                Process.Start(psi);
+            }
+            catch (Exception)
+            {
+                
+            }
+        }
+
+        public void Uninstall(string packageTitle)
+        {
+            var psi = new ProcessStartInfo("choco", string.Format("uninstall {0}", packageTitle))
+            {
+                UseShellExecute = true,
+                CreateNoWindow = true,
+                Verb = "runas"
+            };
+
+            try
+            {
+                Process.Start(psi);
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         public void Init(PluginInitContext context)

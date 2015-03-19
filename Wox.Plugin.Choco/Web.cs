@@ -18,7 +18,7 @@ namespace Wox.Plugin.Choco
             var feedClient = new FeedContext_x0060_1(new Uri("https://chocolatey.org/api/v2/"));
             var searchOptionTemplate = @"IsLatestVersion and ((substringof('{0}',tolower(Id)) eq true) or (substringof('{0}',tolower(Title)) eq true) or (substringof('{0}',tolower(Description)) eq true))";
 
-            var query = feedClient.Packages.AddQueryOption("$filter", string.Format(searchOptionTemplate, criteria.ToLower())) as DataServiceQuery<V2FeedPackage>;
+            var query = feedClient.Packages.AddQueryOption("$filter", string.Format(searchOptionTemplate, criteria.ToLower()));
             return query.Execute().ToList();
         }
 
