@@ -13,6 +13,8 @@ namespace Wox.Plugin.Choco
         public static string ImageFilePath = Directory.GetCurrentDirectory() + @"\Images\";
 #else 
         public static string ImageFilePath = Path.GetDirectoryName(Assembly.GetCallingAssembly().Location) + @"\Images\";
+        public static string TempImageFilePath = Path.GetDirectoryName(Assembly.GetCallingAssembly().Location) + @"\Temp\";
+        public static string FilePrefix = @"_.jpeg";
 #endif
     }
 }

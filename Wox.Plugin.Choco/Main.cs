@@ -16,16 +16,17 @@ namespace Wox.Plugin.Choco
         {
             var filter = query.ActionParameters[0].ToLower();
             var results = Web.Query(filter);
-            var iconsToDownload = results.Where(x => !string.IsNullOrEmpty(x.IconUrl))
+            var iconsToDownload = results.Where(x => !string.IsNullOrEmpty(x.IconUrl)
+                                                     && !x.IconUrl.EndsWith(".svg"))
                                          .Select(x => new KeyValuePair<string, string>(x.Title, x.IconUrl));
 
             Web.DownloadFiles(iconsToDownload);
 
             var final = results.Select(x => new Result
             {
-                IcoPath = Parameters.ImageFilePath + x.Title + ".jpeg",
+                IcoPath = string.IsNullOrEmpty(x.IconUrl) ? string.Empty : Parameters.ImageFilePath + FileUtilities.CleanFileName(x.Title) + Parameters.FilePrefix,
                 Title = x.Title,
-                SubTitle = x.Description,
+                SubTitle = x.Version +  " - " + x.Description.Replace("\n", ""),
                 Action = (c) =>
                 {
                     Install(x.Title);
@@ -51,6 +52,10 @@ namespace Wox.Plugin.Choco
         public void Init(PluginInitContext context)
         {
             this.context = context;
+            if(!Directory.Exists(Parameters.TempImageFilePath))
+            {
+                Directory.CreateDirectory(Parameters.TempImageFilePath);
+            }
         }
 
         public IEnumerable<string> ReadLines(StreamReader streamProvider)

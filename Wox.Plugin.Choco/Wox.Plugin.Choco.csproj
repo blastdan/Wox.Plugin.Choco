@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="File.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Parameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,6 +64,9 @@
     <None Include="Service References\ChocoReference\service.edmx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\_.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
