@@ -6,7 +6,7 @@
 	<h1>Wox.Plugin.Choco</h1>
 	A wox plugin for chocolatey
 
-	![alt tag](https://raw.github.com/blastdan/Wox.Plugin.Choco/master/ChocoWox.jpg)
+	![alt tag](https://raw.github.com/blastdan/Wox.Plugin.Choco/blob/master/ChocoWox.jpg)
 
 	<\hr>
 	Thanks to <a href="https://github.com/james-dibble/ChocolateyExplorer">James-Dibble</a> For helping with the Choco OData Support
