@@ -169,7 +169,10 @@ namespace Wox.Plugin.Choco
                         File.Delete(this.information.FilePath);
                     }
                     catch
-                    {}
+                    {
+                        // Race conditions are causing the file to not be deleted at times.
+                        // I don't really know how to stop this condition right now.
+                    }
                     finally 
                     {
                         this.downloadSuccessful = false;
