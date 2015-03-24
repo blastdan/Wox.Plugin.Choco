@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">$(MSBuildProjectDirectory)\..\</SolutionDir>
+
+        <BuildDependsOn>
+            $(BuildDependsOn);
+            CreateWoxPlugin
+        </BuildDependsOn>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(OS)' == 'Windows_NT'">
+        <!-- Windows specific commands -->
+        <WoxToolsPath>$([System.IO.Path]::Combine($(ProjectDir), ".wox"))</WoxToolsPath>
+        <PackagesConfig>$([System.IO.Path]::Combine($(ProjectDir), "plugin.json"))</PackagesConfig>
+    </PropertyGroup>
+    
+    <PropertyGroup Condition=" '$(OS)' != 'Windows_NT'">
+        <WoxToolsPath>$(SolutionDir).wox</WoxToolsPath>
+        <PackagesConfig>plugin.json</PackagesConfig>
+    </PropertyGroup>
+
+    <UsingTask AssemblyFile="$(WoxToolsPath)\MSBuild.ExtensionPack.dll" TaskName="MSBuild.ExtensionPack.Compression.Zip"/>
+
+    <Target Name="CreateWoxPlugin">
+        <ItemGroup>
+            <WoxPluginFiles Include="$(OutputPath)\**\*.*" Exclude="$(OutputPath)\*vshost.exe*;$(OutputPath)\*.wox" />
+        </ItemGroup>
+        <Zip TaskAction="Create" CompressFiles="@(WoxPluginFiles)"
+            RemoveRoot="$(OutputPath)"
+            ZipFileName="$(OutputPath)$(AssemblyName).wox"
+            CompressionLevel="9" />
+    </Target>
+</Project>
