@@ -1,12 +1,12 @@
 ﻿{
-    "ID": "257C447CD1D111E4B9D61681E6B88EC1",
-    "ActionKeyword":"choco",
-    "Name":"Wox.Plugin.Choco",
-    "Description":"Use chocolatey from wox",
-    "Author":"blastdan",
-    "Version":"1.0.0",
-    "Language":"csharp",
-    "Website": "",
-	"IcoPath": "Images\\icon.png", 
-    "ExecuteFileName":"Wox.Plugin.Choco.dll"
+  "ID":"26ce9d10d27c11e488300800200c9a66",
+  "ActionKeyword":"choco",
+  "Name":"Chocolatey",
+  "Description":"Use chocolatey from wox",
+  "Author":"blastdan",
+  "Version":"1.0.0",
+  "Language":"csharp",
+  "Website":"https://github.com/blastdan/Wox.Plugin.Choco",
+  "IcoPath": "Images\\icon.png",
+  "ExecuteFileName":"Wox.Plugin.Choco.dll"
 }

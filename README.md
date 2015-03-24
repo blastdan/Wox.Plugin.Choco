@@ -1,7 +1,9 @@
-﻿# Wox.Plugin.Choco
+﻿[![Build status](https://ci.appveyor.com/api/projects/status/qumm4l46t5ns5pbc/branch/master?svg=true)](https://ci.appveyor.com/project/blastdan/wox-plugin-choco/branch/master)
+
+# Wox.Plugin.Choco
 A wox plugin for chocolatey
 
-![alt tag](https://raw.githubusercontent.com/blastdan/Wox.Plugin.Choco/master/ChocoWox.jpg)
+![sample application image](https://raw.githubusercontent.com/blastdan/Wox.Plugin.Choco/master/ChocoWox.jpg)
 
 ---
 
