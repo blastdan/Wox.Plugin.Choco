@@ -47,6 +47,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="Extensions\V2FeedPackageExtensions.cs" />
     <Compile Include="File.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Parameters.cs" />

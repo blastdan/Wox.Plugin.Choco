@@ -5,6 +5,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using Wox.Plugin.Choco.ChocoReference;
+using Wox.Plugin.Choco.Extensions;
 
 namespace Wox.Plugin.Choco
 {
@@ -14,41 +16,51 @@ namespace Wox.Plugin.Choco
 
         public List<Result> Query(Query query)
         {
-            var filter = query.ActionParameters[0].ToLower();
-            var results = Web.Query(filter);
-            var iconsToDownload = results.Where(x => !string.IsNullOrEmpty(x.IconUrl)
-                                                     && !x.IconUrl.EndsWith(".svg"))
-                                         .Select(x => new KeyValuePair<string, string>(x.Title, x.IconUrl));
-
-            Web.DownloadFiles(iconsToDownload);
-
-            var final = results.Select(x => new Result
-            {
-                IcoPath = string.IsNullOrEmpty(x.IconUrl) ? string.Empty : Parameters.ImageFilePath + FileUtilities.CleanFileName(x.Title) + Parameters.FilePrefix,
-                Title = x.Title,
-                SubTitle = x.Version +  " - " + x.Description.Replace("\n", ""),
-                ContextMenu = new List<Result>(){
-                    new Result()
-                    {
-                        Title = "Uninstall",
-                        IcoPath = string.IsNullOrEmpty(x.IconUrl) ? string.Empty : Parameters.ImageFilePath + FileUtilities.CleanFileName(x.Title) + Parameters.FilePrefix,
-                        Action = (c) => {
-                            Uninstall(x.Id);
-                            return true;
-                        }
-                    }
-                },
-                Action = (c) =>
-                {
-                    Install(x.Id);                    
-                    return true;
-                }
-            }).ToList();
-
-            return final;
+            var filter = string.Join(" ", query.ActionParameters.ToArray());
+            var queryResults = Web.Query(filter);
+            var downloadResults = Web.DownloadFiles(queryResults.Select(r => r.ToDownloadFileInformation()));
+            var joinResults = queryResults.FullOuterJoin(downloadResults, 
+                                                         q => q.Id, 
+                                                         d => d.id,
+                                                         (a, b, id) => new { package = a, result = b },
+                                                         null, 
+                                                         null);
+            return joinResults.Select(j => CreatePackageListItem(j.package, j.result)).ToList();
         }
 
-        public void Install(string packageTitle)
+        public static Result CreatePackageListItem(V2FeedPackage package, Web.DownloadFileStatus downloadStatus = null)
+        {
+            var icoPath = downloadStatus == null || !downloadStatus.Status ? Parameters.DefaultIconPath : downloadStatus.FilePath;
+
+            return new Result
+            {
+                IcoPath = icoPath,
+                Title = package.Title,
+                SubTitle = string.Concat(package.Version, " - ", package.Description.Replace("\n", "")),
+                ContextMenu = Lists.Of(CreateUnistallResult(package, icoPath)),
+                Action = (c) =>
+                {
+                    Install(package.Id);
+                    return true;
+                }
+            };
+        }
+
+        private static Result CreateUnistallResult(V2FeedPackage package, string icoPath)
+        {
+            return new Result
+            {
+                Title = "Uninstall " + package.Title,
+                IcoPath = icoPath,
+                Action = (c) =>
+                {
+                    Uninstall(package.Id);
+                    return true;
+                }
+            };
+        }
+
+        public static void Install(string packageTitle)
         {
             var psi = new ProcessStartInfo("choco", string.Format("install {0}", packageTitle))
             {
@@ -67,7 +79,7 @@ namespace Wox.Plugin.Choco
             }
         }
 
-        public void Uninstall(string packageTitle)
+        public static void Uninstall(string packageTitle)
         {
             var psi = new ProcessStartInfo("choco", string.Format("uninstall {0}", packageTitle))
             {
@@ -89,10 +101,6 @@ namespace Wox.Plugin.Choco
         public void Init(PluginInitContext context)
         {
             this.context = context;
-            if(!Directory.Exists(Parameters.TempImageFilePath))
-            {
-                Directory.CreateDirectory(Parameters.TempImageFilePath);
-            }
         }
 
         public IEnumerable<string> ReadLines(StreamReader streamProvider)

@@ -11,10 +11,6 @@ namespace Wox.Plugin.Choco.Tests
         [ClassInitialize]
         public static void Initialize(TestContext context)
         {
-            if (!Directory.Exists(Parameters.TempImageFilePath))
-            {
-                Directory.CreateDirectory(Parameters.TempImageFilePath);
-            }
         }
 
         [DeploymentItem("", "Images")]
@@ -23,7 +19,7 @@ namespace Wox.Plugin.Choco.Tests
         public void QueryTest()
         {
             var main = new Main();
-            var query = new Query("choco Putty");
+            var query = new Query("choco java");
 
             main.Query(query);
         }
