@@ -19,9 +19,10 @@ namespace Wox.Plugin.Choco.Tests
         public void QueryTest()
         {
             var main = new Main();
-            var query = new Query("choco java");
+            var query = new Query("choco Git");
 
-            main.Query(query);
+            var results = main.Query(query);
+            var resultCount = results.Count;
         }
 
         [TestMethod]

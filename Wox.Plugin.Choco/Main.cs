@@ -24,7 +24,9 @@ namespace Wox.Plugin.Choco
                                                          d => d.id,
                                                          (a, b, id) => new { package = a, result = b },
                                                          null, 
-                                                         null);
+                                                         null)
+                                           .OrderByDescending(j => j.package.DownloadCount)
+                                           .ToList();
             return joinResults.Select(j => CreatePackageListItem(j.package, j.result)).ToList();
         }
 
