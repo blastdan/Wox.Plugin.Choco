@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Services.Client;
@@ -123,6 +124,10 @@ namespace Wox.Plugin.Choco
             private bool downloadSuccessful = false;
             private bool disposed;
 
+            public bool downloadStarted = false;
+            public static ConcurrentDictionary<string, Downloader> CurrentlyDownloading = new ConcurrentDictionary<string, Downloader>();
+
+
             private Downloader(WebClient client, DownloadFileInformation information)
             {
                 this.information = information;
@@ -142,13 +147,22 @@ namespace Wox.Plugin.Choco
             {
                 var client = new WebClient();
                 var downloader = new Downloader(client, information);
-                downloader.Download();
+                downloader = Downloader.CurrentlyDownloading.GetOrAdd(information.FilePath, downloader);
+                
+                if(!downloader.downloadStarted)
+                {
+                    downloader.downloadStarted = true;
+                    downloader.Download();
+                }
+               
                 return downloader;
             }
 
             public Downloader Wait()
             {
                 this.waitHandle.WaitOne(new TimeSpan(0, 0, 30));
+                var me = this;
+                Downloader.CurrentlyDownloading.TryRemove(this.DownloadFileStatus.FilePath, out me);
                 return this;
             }
 

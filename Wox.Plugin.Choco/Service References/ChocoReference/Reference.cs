@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 3/19/2015 12:04:31 AM
+// Generation date: 2015-07-12 6:33:04 PM
 namespace Wox.Plugin.Choco.ChocoReference
 {
     
@@ -569,6 +569,111 @@ namespace Wox.Plugin.Choco.ChocoReference
         partial void OnProjectUrlChanging(string value);
         partial void OnProjectUrlChanged();
         /// <summary>
+        /// There are no comments for Property ProjectSourceUrl in the schema.
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string ProjectSourceUrl
+        {
+            get
+            {
+                return this._ProjectSourceUrl;
+            }
+            set
+            {
+                this.OnProjectSourceUrlChanging(value);
+                this._ProjectSourceUrl = value;
+                this.OnProjectSourceUrlChanged();
+            }
+        }
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _ProjectSourceUrl;
+        partial void OnProjectSourceUrlChanging(string value);
+        partial void OnProjectSourceUrlChanged();
+        /// <summary>
+        /// There are no comments for Property PackageSourceUrl in the schema.
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string PackageSourceUrl
+        {
+            get
+            {
+                return this._PackageSourceUrl;
+            }
+            set
+            {
+                this.OnPackageSourceUrlChanging(value);
+                this._PackageSourceUrl = value;
+                this.OnPackageSourceUrlChanged();
+            }
+        }
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _PackageSourceUrl;
+        partial void OnPackageSourceUrlChanging(string value);
+        partial void OnPackageSourceUrlChanged();
+        /// <summary>
+        /// There are no comments for Property DocsUrl in the schema.
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string DocsUrl
+        {
+            get
+            {
+                return this._DocsUrl;
+            }
+            set
+            {
+                this.OnDocsUrlChanging(value);
+                this._DocsUrl = value;
+                this.OnDocsUrlChanged();
+            }
+        }
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _DocsUrl;
+        partial void OnDocsUrlChanging(string value);
+        partial void OnDocsUrlChanged();
+        /// <summary>
+        /// There are no comments for Property MailingListUrl in the schema.
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string MailingListUrl
+        {
+            get
+            {
+                return this._MailingListUrl;
+            }
+            set
+            {
+                this.OnMailingListUrlChanging(value);
+                this._MailingListUrl = value;
+                this.OnMailingListUrlChanged();
+            }
+        }
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _MailingListUrl;
+        partial void OnMailingListUrlChanging(string value);
+        partial void OnMailingListUrlChanged();
+        /// <summary>
+        /// There are no comments for Property BugTrackerUrl in the schema.
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string BugTrackerUrl
+        {
+            get
+            {
+                return this._BugTrackerUrl;
+            }
+            set
+            {
+                this.OnBugTrackerUrlChanging(value);
+                this._BugTrackerUrl = value;
+                this.OnBugTrackerUrlChanged();
+            }
+        }
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _BugTrackerUrl;
+        partial void OnBugTrackerUrlChanging(string value);
+        partial void OnBugTrackerUrlChanged();
+        /// <summary>
         /// There are no comments for Property ReportAbuseUrl in the schema.
         /// </summary>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -610,6 +715,48 @@ namespace Wox.Plugin.Choco.ChocoReference
         private string _ReleaseNotes;
         partial void OnReleaseNotesChanging(string value);
         partial void OnReleaseNotesChanged();
+        /// <summary>
+        /// There are no comments for Property PackageStatus in the schema.
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string PackageStatus
+        {
+            get
+            {
+                return this._PackageStatus;
+            }
+            set
+            {
+                this.OnPackageStatusChanging(value);
+                this._PackageStatus = value;
+                this.OnPackageStatusChanged();
+            }
+        }
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _PackageStatus;
+        partial void OnPackageStatusChanging(string value);
+        partial void OnPackageStatusChanged();
+        /// <summary>
+        /// There are no comments for Property PackageSubmittedStatus in the schema.
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string PackageSubmittedStatus
+        {
+            get
+            {
+                return this._PackageSubmittedStatus;
+            }
+            set
+            {
+                this.OnPackageSubmittedStatusChanging(value);
+                this._PackageSubmittedStatus = value;
+                this.OnPackageSubmittedStatusChanged();
+            }
+        }
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _PackageSubmittedStatus;
+        partial void OnPackageSubmittedStatusChanging(string value);
+        partial void OnPackageSubmittedStatusChanged();
         /// <summary>
         /// There are no comments for Property RequireLicenseAcceptance in the schema.
         /// </summary>
