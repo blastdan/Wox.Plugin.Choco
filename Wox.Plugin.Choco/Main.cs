@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Wox.Plugin.Choco.ChocoReference;
+using NuGetGallery;
 using Wox.Plugin.Choco.Extensions;
 
 namespace Wox.Plugin.Choco

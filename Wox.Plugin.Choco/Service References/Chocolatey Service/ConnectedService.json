@@ -1,0 +1,23 @@
+﻿{
+  "ProviderId": "Microsoft.OData.ConnectedService",
+  "Version": "0.2.0",
+  "GettingStartedDocument": {
+    "Uri": "https://msdn.microsoft.com/en-us/library/cc668772(v=vs.110).aspx"
+  },
+  "ExtendedData": {
+    "ServiceName": "Chocolatey Service",
+    "Endpoint": "https://chocolatey.org/api/v2/$metadata",
+    "EdmxVersion": {
+      "Major": 1,
+      "Minor": 0,
+      "Build": 0,
+      "Revision": 0,
+      "MajorRevision": 0,
+      "MinorRevision": 0
+    },
+    "GeneratedFileNamePrefix": "ChocolateyReference",
+    "UseNameSpacePrefix": false,
+    "NamespacePrefix": null,
+    "UseDataServiceCollection": true
+  }
+}

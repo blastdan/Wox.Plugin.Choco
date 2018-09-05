@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Wox.Plugin.Choco.ChocoReference;
+using NuGetGallery;
 using Wox.Plugin.Choco;
 
-namespace Wox.Plugin.Choco.Extensions
+namespace NuGetGallery
 {
     public static class V2FeedPackageExtensions
     {
