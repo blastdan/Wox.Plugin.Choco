@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using NuGetGallery;
 using Wox.Plugin.Choco.Extensions;
+using Wox.Plugin;
 
 namespace Wox.Plugin.Choco
 {

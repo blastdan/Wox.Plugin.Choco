@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using System.Threading;
+using Wox.Plugin;
 
 namespace Wox.Plugin.Choco.Tests
 {
@@ -19,10 +20,13 @@ namespace Wox.Plugin.Choco.Tests
         public void QueryTest()
         {
             var main = new Main();
-            var query = new Query("choco Git");
+            var qurey = new Wox.Plugin.Query();
 
-            var results = main.Query(query);
-            var resultCount = results.Count;
+            //query.ActionKeyword = "choco";
+            //query.Terms = new string[] { "Git" };
+
+            //var results = main.Query(query);
+            //var resultCount = results.Count;
         }
 
         [TestMethod]

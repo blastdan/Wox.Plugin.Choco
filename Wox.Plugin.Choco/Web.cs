@@ -98,6 +98,8 @@ namespace Wox.Plugin.Choco
         /// <returns></returns>
         public static IEnumerable<V2FeedPackage> Query(string criteria)
         {
+            System.Net.ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+
             var feedClient = new FeedContext_x0060_1(Parameters.ChocoWebApiUri);
             var query = feedClient.Packages.AddQueryOption("$filter", string.Format(Parameters.SearchOptionTemplate, criteria.ToLower()));
             return query.Execute().ToList();

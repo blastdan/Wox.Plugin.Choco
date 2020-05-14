@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 9/5/2018 5:00:27 PM
+// Generation date: 5/4/2020 1:16:09 PM
 namespace NuGetGallery
 {
     

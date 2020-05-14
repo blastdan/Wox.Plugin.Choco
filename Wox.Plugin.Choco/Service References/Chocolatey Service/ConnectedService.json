@@ -1,6 +1,6 @@
 ﻿{
   "ProviderId": "Microsoft.OData.ConnectedService",
-  "Version": "0.2.0",
+  "Version": "0.9.1.0",
   "GettingStartedDocument": {
     "Uri": "https://msdn.microsoft.com/en-us/library/cc668772(v=vs.110).aspx"
   },
@@ -16,8 +16,20 @@
       "MinorRevision": 0
     },
     "GeneratedFileNamePrefix": "ChocolateyReference",
-    "UseNameSpacePrefix": false,
+    "UseNamespacePrefix": false,
     "NamespacePrefix": null,
-    "UseDataServiceCollection": true
+    "UseDataServiceCollection": true,
+    "MakeTypesInternal": false,
+    "OpenGeneratedFilesInIDE": false,
+    "GenerateMultipleFiles": false,
+    "CustomHttpHeaders": null,
+    "IncludeWebProxy": false,
+    "WebProxyHost": null,
+    "IncludeWebProxyNetworkCredentials": false,
+    "WebProxyNetworkCredentialsUsername": null,
+    "WebProxyNetworkCredentialsPassword": null,
+    "WebProxyNetworkCredentialsDomain": null,
+    "IncludeCustomHeaders": false,
+    "ExcludedSchemaTypes": []
   }
 }
