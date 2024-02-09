@@ -1,6 +1,6 @@
 ﻿{
   "ProviderId": "Microsoft.OData.ConnectedService",
-  "Version": "0.9.1.0",
+  "Version": "1.0.2.0",
   "GettingStartedDocument": {
     "Uri": "https://msdn.microsoft.com/en-us/library/cc668772(v=vs.110).aspx"
   },
@@ -26,10 +26,12 @@
     "IncludeWebProxy": false,
     "WebProxyHost": null,
     "IncludeWebProxyNetworkCredentials": false,
+    "StoreWebProxyNetworkCredentials": false,
     "WebProxyNetworkCredentialsUsername": null,
     "WebProxyNetworkCredentialsPassword": null,
     "WebProxyNetworkCredentialsDomain": null,
     "IncludeCustomHeaders": false,
+    "StoreCustomHttpHeaders": false,
     "ExcludedSchemaTypes": []
   }
 }

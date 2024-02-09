@@ -10,6 +10,7 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using NuGetGallery;
+using CCR.Website;
 
 namespace Wox.Plugin.Choco
 {

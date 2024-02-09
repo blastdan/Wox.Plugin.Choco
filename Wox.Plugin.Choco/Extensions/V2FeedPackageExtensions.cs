@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CCR.Website;
 using NuGetGallery;
 using Wox.Plugin.Choco;
 

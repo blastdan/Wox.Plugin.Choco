@@ -8,6 +8,7 @@ using System.Text;
 using NuGetGallery;
 using Wox.Plugin.Choco.Extensions;
 using Wox.Plugin;
+using CCR.Website;
 
 namespace Wox.Plugin.Choco
 {
@@ -17,7 +18,7 @@ namespace Wox.Plugin.Choco
 
         public List<Result> Query(Query query)
         {
-            var filter = string.Join(" ", query.ActionParameters.ToArray());
+            var filter = string.Join(" ", query.Search.ToArray());
             var queryResults = Web.Query(filter);
             var downloadResults = Web.DownloadFiles(queryResults.Select(r => r.ToDownloadFileInformation()));
             var joinResults = queryResults.FullOuterJoin(downloadResults, 

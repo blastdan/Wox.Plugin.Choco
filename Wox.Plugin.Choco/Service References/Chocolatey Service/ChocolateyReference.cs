@@ -9,8 +9,8 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 5/4/2020 1:16:09 PM
-namespace NuGetGallery
+// Generation date: 2/9/2024 9:43:55 AM
+namespace CCR.Website
 {
     
     /// <summary>
@@ -55,7 +55,7 @@ namespace NuGetGallery
         }
     }
     /// <summary>
-    /// There are no comments for NuGetGallery.V2FeedPackage in the schema.
+    /// There are no comments for CCR.Website.V2FeedPackage in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Id
@@ -1229,6 +1229,28 @@ namespace NuGetGallery
         private global::System.Nullable<global::System.DateTime> _PackageScanResultDate;
         partial void OnPackageScanResultDateChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnPackageScanResultDateChanged();
+        /// <summary>
+        /// There are no comments for Property PackageScanFlagResult in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string PackageScanFlagResult
+        {
+            get
+            {
+                return this._PackageScanFlagResult;
+            }
+            set
+            {
+                this.OnPackageScanFlagResultChanging(value);
+                this._PackageScanFlagResult = value;
+                this.OnPackageScanFlagResultChanged();
+                this.OnPropertyChanged("PackageScanFlagResult");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _PackageScanFlagResult;
+        partial void OnPackageScanFlagResultChanging(string value);
+        partial void OnPackageScanFlagResultChanged();
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
